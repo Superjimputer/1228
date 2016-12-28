@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+<script>
+    var district = new Array();
+    district [0]=[];
+    district [1]=["TP1", "TP2", "TP3", "TP4", "TP5"];
+    district [2]=["NT1", "NT2", "NT3", "NT4"];
+    district [3]=["TY1", "TY2", "TY3"];
+
+    function update (index) {
+        for (var k=0; k<district[index].length; k++)
+    { 
+        myForm2.district.options[k]=new Option (district[index][k], district[index][k]);  
+    }
+    myForm2.district.length=district[index].length;
+    }
+</script>
+
+</head>
+<body>   
+    <script>
+    for (var i=0; i<10; i++) {console.log(i);}
+
+    var ary = ["Taipei", "New Taipei", "Taoyuan", "Xinzhu", "Miaoli"];
+//    for (var j=0; j<3; j++) {console.log (ary[j]);}
+    for (var j=0; j<ary.length; j++) {console.log (ary[j]);}
+        
+    </script>
+    
+    <form action="" id="myForm">
+        <select name="" id="City">
+            <option value="TP">Taipei</option>
+            <option value="TY">Taoyuan</option>
+        </select>
+    </form>
+    <script>
+    var a = myForm.City.options[0].textContent;
+    var b = myForm.City.options[0].value;
+        
+    myForm.City.options[2]=new Option ("Kaoshong", "KS");
+    console.log(a);
+    </script>
+    
+    <form action="" id="myForm2">
+        <select name="city" id="city" onchange="update(this.selectedIndex)">
+            <option value="">Select</option>
+            <option value="Taipei">Taipei</option>
+            <option value="New Taipei">New Taipei</option>
+            <option value="Taoyuan">Taoyuan</option>
+        </select>
+        <select name="district" id="district">
+            <option value=""></option>
+        </select>
+    </form>
+</body>
+</html>
